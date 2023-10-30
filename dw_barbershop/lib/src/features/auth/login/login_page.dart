@@ -1,3 +1,4 @@
+import 'package:dw_barbershop/src/core/ui/contants.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -35,9 +36,42 @@ class _LoginPageState extends State<LoginPage> {
                         Image.asset('assets/images/imgLogo.png', scale: 2),
                         TextFormField(
                           decoration: const InputDecoration(
-                            label: Text('Email'),
+                            label: Text('E-mail'),
+                            hintText: 'E-mail',
+                            labelStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.black),
+                            floatingLabelBehavior: FloatingLabelBehavior.never,
                           ),
-                        )
+                        ),
+                        const SizedBox(height: 24),
+                        TextFormField(
+                          decoration: const InputDecoration(
+                            label: Text('Senha'),
+                            hintText: 'Senha',
+                            labelStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.black),
+                            floatingLabelBehavior: FloatingLabelBehavior.never,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Esqueceu a senha?',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: ColorConstants.brown,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 24),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: const Size.fromHeight(56),
+                          ),
+                          child: const Text('ACESSAR'),
+                          onPressed: () {},
+                        ),
                       ],
                     ),
                     const Align(
@@ -50,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
