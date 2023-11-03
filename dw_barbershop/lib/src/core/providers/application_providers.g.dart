@@ -80,7 +80,7 @@ final barberShopRepositoryProvider = Provider<BarberShopRepository>.internal(
 );
 
 typedef BarberShopRepositoryRef = ProviderRef<BarberShopRepository>;
-String _$getMyBarbershopHash() => r'fa400960a93922cedcbb387e7f6ef64b7748a016';
+String _$getMyBarbershopHash() => r'bbce5d6f68fbe019eeccf25573e898145a36bfcd';
 
 /// See also [getMyBarbershop].
 @ProviderFor(getMyBarbershop)
