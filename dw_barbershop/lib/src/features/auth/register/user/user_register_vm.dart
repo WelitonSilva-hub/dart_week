@@ -1,6 +1,6 @@
 import 'package:dw_barbershop/src/core/fp/either.dart';
 import 'package:dw_barbershop/src/core/providers/application_providers.dart';
-import 'package:dw_barbershop/src/features/auth/register/user_register_providers.dart';
+import 'package:dw_barbershop/src/features/auth/register/user/user_register_providers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'user_register_vm.g.dart';
@@ -32,6 +32,7 @@ class UserRegisterVm extends _$UserRegisterVm {
 
     switch (registerResult) {
       case Success():
+        // Invalidando os caches para evitar o Login com o usuário incorreto
         ref.invalidate(getMeProvider);
         state = UserRegisterStateStatus.success;
       case Failure():
