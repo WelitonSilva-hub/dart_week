@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:asyncstate/asyncstate.dart';
 import 'package:dw_barbershop/src/core/exceptions/repository_exception.dart';
 import 'package:dw_barbershop/src/core/fp/either.dart';
