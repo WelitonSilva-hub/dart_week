@@ -1,26 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_register_vm.dart';
+part of 'barbershop_register_vm.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userRegisterVmHash() => r'4b0aba1b57ed793b6a39179e45adeecfe4f041f4';
+String _$barbershopRegisterVmHash() =>
+    r'918f9b87c13f0e0f2a4327af5e6040cd4157b89c';
 
-/// See also [UserRegisterVm].
-@ProviderFor(UserRegisterVm)
-final userRegisterVmProvider = AutoDisposeNotifierProvider<UserRegisterVm,
-    UserRegisterStateStatus>.internal(
-  UserRegisterVm.new,
-  name: r'userRegisterVmProvider',
+/// See also [BarbershopRegisterVm].
+@ProviderFor(BarbershopRegisterVm)
+final barbershopRegisterVmProvider = AutoDisposeNotifierProvider<
+    BarbershopRegisterVm, BarbershopRegisterState>.internal(
+  BarbershopRegisterVm.new,
+  name: r'barbershopRegisterVmProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$userRegisterVmHash,
+      : _$barbershopRegisterVmHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$UserRegisterVm = AutoDisposeNotifier<UserRegisterStateStatus>;
+typedef _$BarbershopRegisterVm = AutoDisposeNotifier<BarbershopRegisterState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

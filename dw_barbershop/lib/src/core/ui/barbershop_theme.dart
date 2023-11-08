@@ -38,6 +38,18 @@ sealed class BarbershopTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        side: const BorderSide(
+          width: 1,
+          color: ColorConstants.brown,
+        ),
+        foregroundColor: ColorConstants.brown,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+    ),
     fontFamily: FontConstants.fontFamily,
   );
 }

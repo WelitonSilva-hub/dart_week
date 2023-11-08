@@ -9,13 +9,13 @@ import 'package:dw_barbershop/src/model/barbershop_model.dart';
 import 'package:dw_barbershop/src/model/user_model.dart';
 import 'package:dw_barbershop/src/repositories/barbershop/barbershop_repository.dart';
 
-class BarberShopRepositoryImpl implements BarberShopRepository {
+class BarbershopRepositoryImpl implements BarbershopRepository {
   final RestClient restClient;
 
-  BarberShopRepositoryImpl({required this.restClient});
+  BarbershopRepositoryImpl({required this.restClient});
 
   @override
-  Future<Either<RepositoryException, BarberShopModel>> getMyBarbershop(
+  Future<Either<RepositoryException, BarbershopModel>> getMyBarbershop(
     UserModel userModel,
   ) async {
     switch (userModel) {
@@ -24,13 +24,13 @@ class BarberShopRepositoryImpl implements BarberShopRepository {
           '/barbershop',
           queryParameters: {'user_id': '#userAuthRef'},
         );
-        return Success(BarberShopModel.fromMap(data));
+        return Success(BarbershopModel.fromMap(data));
 
       case UserModelEmployee():
         final Response(:data) = await restClient.auth.get(
           '/barbershop/${userModel.barbershopId}',
         );
-        return Success(BarberShopModel.fromMap(data));
+        return Success(BarbershopModel.fromMap(data));
     }
   }
 

@@ -1,11 +1,11 @@
-class BarberShopModel {
+class BarbershopModel {
   final int id;
   final String name;
   final String email;
   final List<String> openingDays;
   final List<int> openingHours;
 
-  BarberShopModel({
+  BarbershopModel({
     required this.id,
     required this.name,
     required this.email,
@@ -13,7 +13,7 @@ class BarberShopModel {
     required this.openingHours,
   });
 
-  factory BarberShopModel.fromMap(Map<String, dynamic> json) {
+  factory BarbershopModel.fromMap(Map<String, dynamic> json) {
     return switch (json) {
       {
         'id': int id,
@@ -22,7 +22,7 @@ class BarberShopModel {
         'opening_days': final List openingDays,
         'opening_hours': final List openingHours,
       } =>
-        BarberShopModel(
+        BarbershopModel(
           id: id,
           name: name,
           email: email,

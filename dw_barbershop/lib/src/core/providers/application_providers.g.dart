@@ -64,27 +64,27 @@ final getMeProvider = FutureProvider<UserModel>.internal(
 );
 
 typedef GetMeRef = FutureProviderRef<UserModel>;
-String _$barberShopRepositoryHash() =>
-    r'0bc6caf6f58b8865b82dddf9a7b5367fa70e1cde';
+String _$barbershopRepositoryHash() =>
+    r'a64ad01ae6b70f8192c02a09abc33ea968315cb9';
 
-/// See also [barberShopRepository].
-@ProviderFor(barberShopRepository)
-final barberShopRepositoryProvider = Provider<BarberShopRepository>.internal(
-  barberShopRepository,
-  name: r'barberShopRepositoryProvider',
+/// See also [barbershopRepository].
+@ProviderFor(barbershopRepository)
+final barbershopRepositoryProvider = Provider<BarbershopRepository>.internal(
+  barbershopRepository,
+  name: r'barbershopRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$barberShopRepositoryHash,
+      : _$barbershopRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef BarberShopRepositoryRef = ProviderRef<BarberShopRepository>;
-String _$getMyBarbershopHash() => r'bbce5d6f68fbe019eeccf25573e898145a36bfcd';
+typedef BarbershopRepositoryRef = ProviderRef<BarbershopRepository>;
+String _$getMyBarbershopHash() => r'9b144de99fecc5f82671f523e5badb91c7899080';
 
 /// See also [getMyBarbershop].
 @ProviderFor(getMyBarbershop)
-final getMyBarbershopProvider = FutureProvider<BarberShopModel>.internal(
+final getMyBarbershopProvider = FutureProvider<BarbershopModel>.internal(
   getMyBarbershop,
   name: r'getMyBarbershopProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -94,6 +94,20 @@ final getMyBarbershopProvider = FutureProvider<BarberShopModel>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef GetMyBarbershopRef = FutureProviderRef<BarberShopModel>;
+typedef GetMyBarbershopRef = FutureProviderRef<BarbershopModel>;
+String _$logoutHash() => r'9c1877c7d3e7bdda7c35606bf36fd302227e9c00';
+
+/// See also [logout].
+@ProviderFor(logout)
+final logoutProvider = AutoDisposeFutureProvider<void>.internal(
+  logout,
+  name: r'logoutProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$logoutHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef LogoutRef = AutoDisposeFutureProviderRef<void>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
