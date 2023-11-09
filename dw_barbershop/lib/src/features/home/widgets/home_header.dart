@@ -10,7 +10,7 @@ class HomeHeader extends ConsumerWidget {
   final bool showFilter;
 
   const HomeHeader({super.key}) : showFilter = true;
-  const HomeHeader.withoutFitler({super.key}) : showFilter = false;
+  const HomeHeader.withoutFilter({super.key}) : showFilter = false;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

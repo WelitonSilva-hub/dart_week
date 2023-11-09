@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:dw_barbershop/src/core/providers/application_providers.dart';
 import 'package:dw_barbershop/src/core/ui/barbershop_icons.dart';
 import 'package:dw_barbershop/src/core/ui/contants.dart';
 import 'package:dw_barbershop/src/core/ui/widgets/barbershop_loader.dart';
@@ -22,9 +23,7 @@ class HomeAdmPage extends ConsumerWidget {
         data: (HomeAdmState data) {
           return CustomScrollView(
             slivers: [
-              const SliverToBoxAdapter(
-                child: HomeHeader(),
-              ),
+              const SliverToBoxAdapter(child: HomeHeader()),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (context, index) => HomeEmplyeeTile(
@@ -57,6 +56,7 @@ class HomeAdmPage extends ConsumerWidget {
         ),
         onPressed: () async {
           await Navigator.of(context).pushNamed('/employee/register');
+          ref.invalidate(getMeProvider);
           ref.invalidate(homeAdmVmProvider);
         },
       ),

@@ -34,28 +34,30 @@ class _SplashPageState extends ConsumerState<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    ref.listen(splashVmProvider, (_, state) {
-      state.whenOrNull(
-        error: (error, stackTrace) {
-          log('Erro ao validar o login', error: error, stackTrace: stackTrace);
-          Messages.showError('Erro ao validar o login', context);
-          Navigator.of(context)
-              .pushNamedAndRemoveUntil('/auth/login', (route) => false);
-        },
-        data: (data) {
-          switch (data) {
-            case SplashState.loggedADM:
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil('/home/adm', (route) => false);
-            case SplashState.loggedEmployee:
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil('/home/employee', (route) => false);
-            case _:
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil('/home/login', (route) => false);
-          }
-        },
-      );
+    ref.listen(splashVmProvider, (_, state) async {
+      await Future.delayed(const Duration(seconds: 3)).then((_) {
+        state.whenOrNull(
+          error: (error, stack) {
+            log('Erro ao validar o login', error: error, stackTrace: stack);
+            Messages.showError('Erro ao validar o login', context);
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil('/auth/login', (route) => false);
+          },
+          data: (data) {
+            switch (data) {
+              case SplashState.loggedADM:
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('/home/adm', (route) => false);
+              case SplashState.loggedEmployee:
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/home/employee', (route) => false);
+              case _:
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('/home/login', (route) => false);
+            }
+          },
+        );
+      });
     });
 
     return Scaffold(
@@ -72,7 +74,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
           child: AnimatedOpacity(
             curve: Curves.easeIn,
             opacity: _animationOpacityLogo,
-            duration: const Duration(seconds: 1),
+            duration: const Duration(seconds: 3),
             onEnd: () {
               Navigator.of(context).pushAndRemoveUntil(
                 PageRouteBuilder(
@@ -91,7 +93,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
               width: _logoAnimationWidth,
               height: _logoAnimationHeight,
               curve: Curves.linearToEaseOut,
-              duration: const Duration(seconds: 1),
+              duration: const Duration(seconds: 3),
               child: Image.asset(
                 ImageConstants.imgLogo,
                 fit: BoxFit.cover,
